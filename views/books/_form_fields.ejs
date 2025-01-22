@@ -1,7 +1,7 @@
 <div>
 
     <label>Title</label>
-    <input type="text" name="title" value="<%- book.title %>">
+    <input type="text" name="title" value="<%= book.title %>">
 </div>
 <div>
 
@@ -17,26 +17,12 @@
     
     </select>
 </div>
-<% 
-    let formattedDate = '';
-    if (book && book.publishDate) {
-        const date = new Date(book.publishDate);
-        const year = date.getFullYear();
-        const month = ('0' + (date.getMonth() + 1)).slice(-2);
-        const day = ('0' + date.getDate()).slice(-2);
-        formattedDate = `${year}-${month}-${day}`;
-    }
-%>
-<div>
-    <label>Publish Date</label>
-    <input type="date" name="publishDate" value="<%= formattedDate %>">
-</div>
 
-<!-- <div>
+<div>
     <label >Publish Date</label>
     <input type="date" name="publishDate" 
-    value="<%= book.publishDate ? book.publishDate.toISOString().split('T')[0] : '' %>">
-</div> -->
+    value="<%= book.publishedDate ? book.publishedDate.toISOString().split('T')[0] : ''%>">
+</div>
 
 <div>
     <label >Page Count</label>
